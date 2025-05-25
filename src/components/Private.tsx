@@ -1,4 +1,4 @@
-import { ArrowRightIcon, ExternalLinkIcon, XIcon } from "lucide-react";
+import { ArrowRightIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 type Item = {
     id: number;

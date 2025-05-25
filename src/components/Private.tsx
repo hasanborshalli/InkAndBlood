@@ -1,82 +1,230 @@
-import { ExternalLinkIcon } from "lucide-react";
+import { ArrowRightIcon, ExternalLinkIcon, XIcon } from "lucide-react";
+import { useState } from "react";
+type Item = {
+    id: number;
+    title: string;
+    content: string;
+};
 export const Private = () => {
+    const [selectedItem, setSelectedItem] = useState<Item | null>(null);
     const newsItems = [
         {
             id: 1,
             title: "اسمحيلي يا هدى",
-            url: "/pdf/اسمحيلي يا هدى.docx",
+            content: `سمحيلي يا هدى
+بحرقة ابكي
+مع انو طول عمرك
+ما بتحبي البكي
+من زمان وانا عم شوف
+هالمرض المنكي
+اللي خطف مني
+خالي وخلص الحكي
+ما كنت بدي اكتب
+ولا اتذمر واشتكي
+بس خلص قررت
+عبر عن وجعي وابكي
+فتت عكلية الاعلام
+تصير متلك واتمثل فيكي
+كنت خير مثال
+وبالاعلام ملكي
+شفتك بالمقابلة
+وعنك دموعك بتحكي
+قديش عشتي قهر
+ووجع من مرض متكي
+يا هالمرض حل
+قلتيلو من قهرك
+يا ريتو بحس
+تيحل عن ضهرك
+دموعك غالية
+عقلبي وقلب اهلك
+ضحتك مرافقتني
+وبنام عصوتك
+هالجبل البعيد
+منا خطفك
+وانت اللي كنت
+تغنيلو بفرحك
+
+               ايليان سليم العسراوي
+`,
         },
-        {
-            id: 2,
-            title: "الساعة 6 مساءً رتبة",
-            url: "/pdf/الساعة 6 مساءً رتبة.docx",
-        },
+
         {
             id: 3,
             title: "إلى الهاوية در",
-            url: "/pdf/إلى الهاوية در.docx",
+            content: `إلى الهاوية در
+ها هو لبنان يصل إلى الهاوية، إلى “جهنم”، الوضع الاقصادي مذري والاجتماعي مبكي 
+كم نحتاج اليوم إلى بصيص نور ينتشل لبنان من العتمة، ازمات تلو الاخرى تستشري في لبنان ، اذ اصبح الوضع لا يطاق
+نسمع عن سعي الشباب للهجرة ولكن هل نعلم اين سيصبح لبنان بعد هجرة ادمغته؟ الى اسفل اسفل الهاوية
+الوضع الاجتماعي، حدِّث ولا حرج، جرائم وعنف يزداد كل يوم، فلتان امني رصاص طائش يملئ الأجواء ويقتل الناس
+اما الوضع الاقتصادي فالناس ترزح تحت الفقر المدقع ووصلنا الى ما تحت خط الفقر بمستويات مخيفة، والمجتمع يعيش اسوأ نوع جوع حتى الحاجات الاساسية اصبحت من الكماليات مع رفع الدعم كالادوية والخبز وغيرها.
+وأتى الوضع السياسي ليزيد الطين بلّة، فالطائفية طغت على كل شيء، في الخطابات السياسية، القضاء وحتى في الرياضة. أضحت الطائفية خبز اللبناني اليومي. 
+في القضاء، السياسة والمحسوبيات غيرت مجرى الكثير من التحقيقات او حتى المحاكمات. والحماية السياسية شملت مجرمين ومنهم من هو مخبأ تحت ظل بعض السياسيين.
+أختم لأقول الويل للبنانٕ دمر بالكامل ولم يبقى منه شيء إلا الصراعات والمناكفات والنزاعات التي انتزعت منه صفة بلد ليصبح "مزرعة" وغابة متفلتة لا حسيب لها ولا رقيب. 
+`,
         },
         {
             id: 4,
             title: "الى ايليو",
-            url: "/pdf/الى ايليو.docx",
+            content: `ايليو الى اللقاء
+من بعد اربعين يوم
+                      ودموعي ما نشفت
+بتذكرك كل دقيقة
+                   كل ما الصورة شفت
+صرت احكي معك
+            من بعد ما الحقيقة اكتشفت
+الحقيقة انك ملاكنا
+             بتصليلنا من السما
+مع انو صوتك
+                    بعدو بدينينا
+كنت عنوان الامل
+              ترفعلنا معنوياتنا
+صليلي تاقدر
+              كفي بعالم معتم
+صايرة العالم في
+              من الظلم تتألم
+والطيبة صارت هي
+                عنوان الالم
+
+                            ايليان سليم العسراوي
+
+
+
+`,
         },
         {
             id: 5,
             title: "بلدي لبنان",
-            url: "/pdf/بلدي لبنان.docx",
+            content: `ايليو الى اللقاء
+من بعد اربعين يوم
+                      ودموعي ما نشفت
+بتذكرك كل دقيقة
+                   كل ما الصورة شفت
+صرت احكي معك
+            من بعد ما الحقيقة اكتشفت
+الحقيقة انك ملاكنا
+             بتصليلنا من السما
+مع انو صوتك
+                    بعدو بدينينا
+كنت عنوان الامل
+              ترفعلنا معنوياتنا
+صليلي تاقدر
+              كفي بعالم معتم
+صايرة العالم في
+              من الظلم تتألم
+والطيبة صارت هي
+                عنوان الالم
+
+                            ايليان سليم العسراوي
+
+
+
+`,
         },
         {
             id: 6,
             title: "بيروت",
-            url: "/pdf/بيروت.docx",
+            content: `ايليو الى اللقاء
+من بعد اربعين يوم
+                      ودموعي ما نشفت
+بتذكرك كل دقيقة
+                   كل ما الصورة شفت
+صرت احكي معك
+            من بعد ما الحقيقة اكتشفت
+الحقيقة انك ملاكنا
+             بتصليلنا من السما
+مع انو صوتك
+                    بعدو بدينينا
+كنت عنوان الامل
+              ترفعلنا معنوياتنا
+صليلي تاقدر
+              كفي بعالم معتم
+صايرة العالم في
+              من الظلم تتألم
+والطيبة صارت هي
+                عنوان الالم
+
+                            ايليان سليم العسراوي
+
+
+
+`,
         },
         {
             id: 7,
             title: "دمعة وطن",
-            url: "/pdf/دمعة وطن.docx",
-        },
-        {
-            id: 9,
-            title: "مسيرتي",
-            url: "/pdf/مسيرتي_052755.docx",
+            content: `دمعة وطن 
+
+آخ یا بلادي شهداءنا                     یاخسارة الاوطان  
+آخ یاما بكینا شرفاءنا خسارة راح لبنان  
+حامینا الاسمو شهید            ودمع وألم كبران  
+بیاتن إماتن وولادن            حتى ولاد الجیران  
+الحزن سكن البیت              وصور عالحیطان  
+توابیت بیض أعلام             لفت كم كم جثمان  
+صوت الموت وجع             والضمیر غفلان  
+صار موتن كالعادة             لكل الوطن نیشان   
+
+       ایلیان العسراوي 
+
+`,
         },
     ];
     return (
-        <section id="private" className="w-full bg-white py-16 md:py-24">
+        <section
+            id="private"
+            className="w-full bg-white py-16 md:py-24 relative"
+        >
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#323E48] mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
                         خاص رئيسة التحرير
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {newsItems.map((news) => (
+                    {newsItems.map((item) => (
                         <div
-                            key={news.id}
-                            className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-shadow border border-gray-100"
+                            key={item.id}
+                            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                         >
                             <div className="p-6">
-                                <h3 className="text-xl font-bold text-[#323E48] mb-2">
-                                    {news.title}
+                                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                                    {item.title}
                                 </h3>
 
-                                <a
-                                    download
-                                    href={news.url}
-                                    className="flex items-center gap-5 text-[#323E48] font-medium hover:text-[#323E48]/80"
+                                <button
+                                    onClick={() => setSelectedItem(item)}
+                                    className="inline-flex items-center text-[#323E48] font-medium hover:text-[#323E48]/80"
                                 >
-                                    <ExternalLinkIcon
+                                    اقرأ المزيد{" "}
+                                    <ArrowRightIcon
                                         size={16}
-                                        className="mr-1"
-                                    />{" "}
-                                    تحميل الملف
-                                </a>
+                                        className="mr-1 rotate-180"
+                                    />
+                                </button>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+            {/* Modal */}
+            {selectedItem && (
+                <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-xl w-full max-w-xl max-h-[80vh] overflow-y-auto mx-4 p-6 relative">
+                        <button
+                            onClick={() => setSelectedItem(null)}
+                            className="absolute top-3 left-3 text-gray-500 hover:text-gray-700"
+                        >
+                            <XIcon size={20} />
+                        </button>
+                        <h3 className="text-2xl font-bold mb-4 text-gray-800">
+                            {selectedItem.title}
+                        </h3>
+                        <p className="text-gray-700 whitespace-pre-line">
+                            {selectedItem.content}
+                        </p>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };

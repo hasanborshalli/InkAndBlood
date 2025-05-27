@@ -192,6 +192,25 @@ export const Private = () => {
                             </div>
                         </div>
                     ))}
+                    <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                        <div className="p-6">
+                            <h3 className="text-xl font-bold text-gray-800 mb-3">
+                                مسيرتي
+                            </h3>
+
+                            <a
+                                href="/pdf/مسيرتي.pdf"
+                                download
+                                className="inline-flex items-center text-[#323E48] font-medium hover:text-[#323E48]/80"
+                            >
+                                تحميل الملف{" "}
+                                <ArrowRightIcon
+                                    size={16}
+                                    className="mr-1 rotate-180"
+                                />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
